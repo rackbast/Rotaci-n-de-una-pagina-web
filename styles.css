@@ -1,0 +1,184 @@
+:root {
+    /* dark shades of primary color*/
+    --clr-primary-1: hsl(205, 86%, 17%);
+    --clr-primary-2: hsl(205, 77%, 27%);
+    --clr-primary-3: hsl(205, 72%, 37%);
+    --clr-primary-4: hsl(205, 63%, 48%);
+    /* primary/main color */
+    --clr-primary-5: #49a6e9;
+    /* lighter shades of primary color */
+    --clr-primary-6: hsl(205, 89%, 70%);
+    --clr-primary-7: hsl(205, 90%, 76%);
+    --clr-primary-8: hsl(205, 86%, 81%);
+    --clr-primary-9: hsl(205, 90%, 88%);
+    --clr-primary-10: hsl(205, 100%, 96%);
+    /* darkest grey - used for headings */
+    --clr-grey-1: hsl(209, 61%, 16%);
+    --clr-grey-2: hsl(211, 39%, 23%);
+    --clr-grey-3: hsl(209, 34%, 30%);
+    --clr-grey-4: hsl(209, 28%, 39%);
+    /* grey used for paragraphs */
+    --clr-grey-5: hsl(210, 22%, 49%);
+    --clr-grey-6: hsl(209, 23%, 60%);
+    --clr-grey-7: hsl(211, 27%, 70%);
+    --clr-grey-8: hsl(210, 31%, 80%);
+    --clr-grey-9: hsl(212, 33%, 89%);
+    --clr-grey-10: hsl(210, 36%, 96%);
+    --clr-white: #fff;
+    --clr-red-dark: hsl(360, 67%, 44%);
+    --clr-red-light: hsl(360, 71%, 66%);
+    --clr-green-dark: hsl(125, 67%, 44%);
+    --clr-green-light: hsl(125, 71%, 66%);
+    --clr-secondary: hsla(182, 63%, 54%);
+    --clr-black: #222;
+    --ff-primary: "Roboto", sans-serif;
+    --ff-secondary: "Open Sans", sans-serif;
+    --transition: all 0.3s linear;
+    --spacing: 0.25rem;
+    --radius: 0.5rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    --fixed-width: 620px;
+      /*font family*/
+      --Open-Sans:'Open Sans', sans-serif;
+      --Roboto: 'Roboto', sans-serif;
+      --Roboto-serif: 'Roboto Serif', serif;
+    /*
+    colors
+    */
+    --black-light:#383838;
+    --black-strong:#1f1f1f;
+    --blue-light:#3498db;
+  }
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: #333;
+    overflow-x: hidden;
+    color: #222;
+    position: relative;
+    z-index: -10;
+   margin: 0;
+}
+.container{
+    background-color: var(--clr-white);
+    transform-origin: top left;
+    width: 100vw;
+    padding: 50px;
+    min-width: 100vh;
+   
+    
+}
+.container.show{
+    transition: transform 0.5s linear;
+    transform: rotate(-15deg);
+}
+.container-circle{
+    position: fixed;
+    top: -100px;
+    left: -100px;
+    z-index: 15;
+}
+
+.circle{
+    background-color: var(--blue-light);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+
+    
+}
+.container.show .circle{
+    transition: transform 0.5s linear;
+    transform: rotate(-70deg); 
+}
+
+.circle button{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    background: transparent;
+    border: none;
+    font-size: 2.6rem;
+  
+}
+
+.circle #open{
+    left: 60%;
+}
+.circle button#close {
+   
+    top: 60%;
+    transform: rotate(90deg); 
+    transform-origin: left top;
+}
+
+#open .material-symbols-outlined {
+    font-size: 4.0rem; /* Ajusta el tamaño según tus preferencias */
+  }
+#close .material-symbols-outlined{
+    font-size: 4.0rem;
+}
+img{
+   width: 90%;
+   margin: 15px;
+}
+.content{
+    max-width: 1000px;
+    margin: 50px auto;
+    font-size: 1.7rem;
+    
+}
+.content .content__title{
+    margin: 0;
+    font-size: 2.7rem;
+}
+.content p{
+    text-align: justify;
+}
+.nav{
+    position: fixed;
+    bottom: 10px;
+    left: 0; 
+    z-index: 100;
+    color: red;
+}
+.navegacion{
+    transform:translateX(-100%)
+}
+.container.show+section .navegacion{
+    transition: transform 0.9s linear;
+    transform:translateX(0)
+}
+
+
+.navegacion ul li{
+    list-style: none;
+}
+.navegacion ul li{
+    margin: 50px;
+}
+.navegacion ul li:first-child{
+    margin-left: 10px;
+}
+.navegacion ul li:nth-child(2){
+    margin-left: 30px;
+}
+.navegacion ul li:nth-child(3){
+    margin-left: 50px;
+}
+.navegacion ul a{
+    text-decoration: none;
+    font-size: 2.0rem;
+    font-weight: bold;
+    color:var(--clr-white);
+}
